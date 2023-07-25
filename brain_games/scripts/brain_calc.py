@@ -7,8 +7,8 @@ name = welcome_user()
 print('What is the result of the expression?')
 
 
-def calculate(number_1, number_2, random_math_sign_1):
-    match random_math_sign_1:
+def calculate(number_1, number_2, operation):
+    match operation:
         case '+':
             return number_1 + number_2
         case '-':

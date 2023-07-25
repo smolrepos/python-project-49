@@ -7,37 +7,41 @@ name = welcome_user()
 print('What is the result of the expression?')
 
 
-def verification_expression(number_1, random_math_sign1, number_2):
-  if random_math_sign1 == '+':
-    total = number_1 + number_2
-  elif random_math_sign1 == '-':
-    total = number_1 - number_2
-  else:
-    total = number_1 * number_2
-  return total
+def calculate(number_1, number_2, random_math_sign_1):
+    match random_math_sign_1:
+        case '+':
+            return number_1 + number_2
+        case '-':
+            return number_1 - number_2
+        case _:
+            return number_1 * number_2
+
+math_signs = ['+', '-', '*']
+start_number = 1
+end_number = 100
 
 
 def main():
     count = 1
     questions_count = 3
+    complete = False
 
     while count <= questions_count:
-        math_signs = ['+', '-', '*']
-        random_math_sign = choice(math_signs)
-        number1 = randint(1, 100)
-        number2 = randint(1, 15)
-        print(f'Question: {number1} {random_math_sign} {number2}')
+        operation = choice(math_signs)
+        number_1 = randint(start_number, end_number)
+        number_2 = randint(start_number, end_number)
+        print(f'Question: {number_1} {operation} {number_2}')
         user_answer = prompt.string('Your answer: ')
-        correct_answer_to_expression = verification_expression(number1, random_math_sign, number2)
+        correct_answer = calculate(number_1, number_2, operation)
 
-        if user_answer == str(correct_answer_to_expression):
+        if int(user_answer) == correct_answer:
             print('Corect!')
 
             complete = count >= questions_count
             count += 1
         else:
-            print(f'Question: {number1} {random_math_sign} {number2}\nYour answer: {str(correct_answer_to_expression)}')
-            print(f"'{user_answer}' is wrong answer ;(. Correct answer was '{correct_answer_to_expression}'.")
+            print(f'Question: {number_1} {operation} {number_2}\nYour answer: {str(correct_answer)}')
+            print(f"'{user_answer}' is wrong answer ;(. Correct answer was '{correct_answer}'.")
             print(f"Let's try again, {name}!")
             break
 

@@ -2,33 +2,33 @@ from brain_games.engine import play
 from random import randint
 
 
+PROGRESSION_LENGTH = 10
+
+
 def gen_progression():
     step = randint(1, 20)
     number = randint(1, 100)
     count = 1
     progression = []
-    while count <= 10:
+    while count <= PROGRESSION_LENGTH:
         progression.append(str(number))
         number += step
         count += 1
     return progression
 
 
-def get_round_entries(ls_2):
-    step_num = randint(0, 9)
+def get_round_entries(progression):
+    step_num = randint(0, PROGRESSION_LENGTH - 1)
     previous_index = step_num
-    correct_answer = ls_2.pop(step_num)
-    ls_2.insert(previous_index, '..')
-    progression = ' '.join(ls_2)
-    return progression, correct_answer
+    correct_answer = progression.pop(step_num)
+    progression.insert(previous_index, '..')
+    question = ' '.join(progression)
+    return question, str(correct_answer)
 
 
 def round_generate():
-    final_progression, answer = get_round_entries(gen_progression())
-    question = f'{final_progression}'
-    correct_answer = str(answer)
-
-    return [question, correct_answer]
+    progression = gen_progression()
+    return get_round_entries(progression)
 
 
 def main():

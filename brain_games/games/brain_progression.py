@@ -18,10 +18,9 @@ def gen_progression():
 
 
 def get_round_entries(progression):
-    step_num = randint(0, PROGRESSION_LENGTH - 1)
-    previous_index = step_num
-    correct_answer = progression.pop(step_num)
-    progression.insert(previous_index, '..')
+    step = randint(0, PROGRESSION_LENGTH - 1)
+    correct_answer = progression.pop(step)
+    progression.insert(step, '..')
     question = ' '.join(progression)
     return question, str(correct_answer)
 

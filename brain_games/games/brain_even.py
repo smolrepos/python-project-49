@@ -18,7 +18,3 @@ def round_generate():
 def main():
     description = 'Answer "yes" if the number is even, otherwise answer "no".'
     play(round_generate, description)
-
-
-if __name__ == '__main__':
-    main()

@@ -36,7 +36,3 @@ def round_generate():
 def main():
     description = 'What is the result of the expression?'
     play(round_generate, description)
-
-
-if __name__ == '__main__':
-    main()

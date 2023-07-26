@@ -1,5 +1,4 @@
 from brain_games.engine import play
-import prompt
 from random import randint
 
 

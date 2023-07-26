@@ -1,16 +1,10 @@
 import prompt
 from brain_games.cli import welcome_user
 
-def round_generate_1():
-    question = 56
-    correct_answer = 'yes'
-
-    return [question, correct_answer]
-
 
 def play(round_generate, description):
-    name = welcome_user()
     QUESTIONS_COUNT = 3
+    name = welcome_user()
     count = 1
     complete = False
 

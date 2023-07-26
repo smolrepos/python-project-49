@@ -3,15 +3,15 @@ from random import randint
 
 
 def gen_progression():
-    num_2 = randint(1, 20)
-    num_1 = randint(1, 100)
+    step = randint(1, 20)
+    number = randint(1, 100)
     count = 1
-    ls = []
+    progression = []
     while count <= 10:
-        ls.append(str(num_1))
-        num_1 = num_1 + num_2
+        progression.append(str(number))
+        number += step
         count += 1
-    return ls
+    return progression
 
 
 def get_round_entries(ls_2):

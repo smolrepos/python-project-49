@@ -6,20 +6,30 @@ START_NUMBER = 1
 END_NUMBER = 100
 
 
-def prime_number(number):
-  if number == 0 or number == 1:
+def is_prime(number):
+  if number < 2:
+    return False
+  if number % 2 == 0:
+    return number == 2
+  if number % 3 == 0:
+    return number == 3
+  i = 5
+  while i ** 2 <= number:
+    if number % i == 0 or number % i + 2 == 0:
+      return False
+    i += 6
+  return True
+
+
+def is_correct(boolean_value):
+    if boolean_value:
+        return 'yes'
     return 'no'
-  elif number == 2 or number == 3 or number == 5 or number == 11:
-    return 'yes'
-  elif number % 2 == 0 or number % 3 == 0 or number % 5 == 0 or number % 7 == 0 or number % 11 == 0:
-    return 'no'
-  else:
-    return 'yes'
 
 
 def round_generate():
     question = randint(START_NUMBER, END_NUMBER)
-    correct_answer = prime_number(question)
+    correct_answer = is_correct(is_prime(question))
 
     return [question, correct_answer]
 

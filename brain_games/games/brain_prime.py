@@ -21,15 +21,9 @@ def is_prime(number):
   return True
 
 
-def is_correct(boolean_value):
-    if boolean_value:
-        return 'yes'
-    return 'no'
-
-
 def round_generate():
     question = randint(START_NUMBER, END_NUMBER)
-    correct_answer = is_correct(is_prime(question))
+    correct_answer = 'yes' if is_prime(question) else 'no'
 
     return [question, correct_answer]
 

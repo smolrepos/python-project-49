@@ -15,7 +15,7 @@ def is_prime(number):
     return number == 3
   i = 5
   while i ** 2 <= number:
-    if number % i == 0 or number % i + 2 == 0:
+    if number % i == 0 or number % (i + 2) == 0:
       return False
     i += 6
   return True

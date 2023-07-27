@@ -22,7 +22,8 @@ def play(round_generate, description):
             complete = count >= QUESTIONS_COUNT
             count += 1
         else:
-            print(f"'{user_answer}' is wrong answer ;(. Correct answer was '{correct_answer}'.")
+            error_text = 'is wrong answer ;(. Correct answer was'
+            print(f"'{user_answer}' {error_text} '{correct_answer}'.")
             print(f"Let's try again, {name}!")
             break
 

@@ -9,6 +9,10 @@ END_NUMBER = 100
 QUESTIONS_COUNT = 3
 
 
+def get_exception_message(op, ops):
+    return f'Wrong operation "{op}". Supported operation - {ops}.'
+
+
 def calculate(number_1, number_2, operation):
     match operation:
         case config.MATH_ADD:
@@ -18,9 +22,8 @@ def calculate(number_1, number_2, operation):
         case config.MATH_MUL:
             return number_1 * number_2
         case _:
-            raise Exception(
-                f'Wrong operation "{operation}". Supported operation - {", ".join(OPERATIONS)}.'
-            )
+            operations = ", ".join(OPERATIONS)
+            raise Exception(get_exception_message(operation, operations))
 
 
 def round_generate():

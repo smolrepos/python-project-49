@@ -29,6 +29,6 @@ def round_generate():
 
 
 def main():
-    description = 'Answer "yes" if given number" \
-         "is prime. Otherwise answer "no".'
+    description = 'Answer "yes" if given number' \
+        ' is prime. Otherwise answer "no".'
     play(round_generate, description)

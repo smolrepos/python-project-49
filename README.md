@@ -14,6 +14,13 @@ make publish
 
 ```cmd
 make package-install
+```
+
+
+### Brain even
+```cmd
+brain-even
+```
 
 
 ```cmd
@@ -32,11 +39,6 @@ Let's try again, Bill!
 
 ```cmd
 Correct!
-```
-
-### Brain even
-```cmd
-brain-even
 ```
 
 [![asciicast](https://asciinema.org/a/O8mkEUn3UQgbAnP6teO4MMmVK.svg)](https://asciinema.org/a/O8mkEUn3UQgbAnP6teO4MMmVK)
